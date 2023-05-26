@@ -1,0 +1,37 @@
+/*
+Typography
+ */
+
+/* Heading text */
+body { font-family: 'Open Gothic', sans-serif; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-weight: 400; line-height: 1.2; }
+h1, .h1 { font-size: 3.5rem; }
+h2, .h2 { font-size: 3rem; }
+h3, .h3 { font-size: 2.5rem; }
+h4, .h4 { font-size: 2rem; }
+h5, .h5 { font-size: 1.5rem; }
+h6, .h6 { font-size: 1rem; }
+b, strong { font-weight: 700; }
+
+/* Display Heading text */
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6, .display-7, .display-8, .display-9 { clear: both; font-weight: 100; line-height: 1; }
+.display-1 { font-size: 9rem; }
+.display-2 { font-size: 8rem; }
+.display-3 { font-size: 7rem; }
+.display-4 { font-size: 6rem; }
+.display-5 { font-size: 5rem; }
+.display-6 { font-size: 4rem; }
+.display-7 { font-size: 3rem; }
+.display-8 { font-size: 2rem; }
+.display-9 { font-size: 1rem; }
+
+/*
+Common
+ */
+
+/* site */
+.site-header { padding-top: 10rem; padding-bottom: 4rem; }
+.site-content { padding-bottom: 10rem; }
+.site-title, .site-description { text-align: center; }
+.site-title { padding-bottom: 2rem; }
+.site-footer { text-align: center; padding: 1.5rem 0; border-top: 1px solid #eee; font-size: 1.2rem; }

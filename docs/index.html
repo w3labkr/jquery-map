@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- Do not change the meta tag above. -->
+    <!-- X-UA-Compatible does not work in Explorer if http-equiv is not directly below it. -->
+
+    <!-- The robots meta tag -->
+    <!-- https://developers.google.com/search/reference/robots_meta_tag -->
+    <meta name="robots" content="index,follow" />
+    <meta name="google-site-verification" content="noxuuZPkglSXrTXLFf3k-7s71ERA_WJ1PuXOqSHb0M4" />
+    <meta name="naver-site-verification" content="525b5e0753d2b7467f3a737c7ba68af802d4b12e">
+
+    <title>jQuery Map</title>
+    <meta name="description" content="maps for javascript api" />
+    <meta name="keywords" content="map,maps,map,google-map,naver-map,daum-map" />
+
+    <!-- Favicon -->
+    <!-- 
+    <link rel="shortcut icon" type="image/x-icon" href="assets/ico/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/ico/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/ico/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/ico/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/ico/android-icon-192x192.png" />
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-icon-180x180.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="assets/ico/ms-icon-144x144.png" /> 
+    -->
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://w3labkr.github.io/jquery-map/" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/grid-system.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <!--[if lt IE 9]>
+    <script src="assets/vendor/html5shiv/v3.7.3/html5shiv.min.js"></script>
+    <script src="assets/vendor/respond/v1.4.2/respond.min.js"></script>
+    <script src="assets/vendor/selectivizr/v1.0.3b/selectivizr.js"></script>
+    <![endif]-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135917862-14"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-135917862-14');
+    </script>
+
+    <style>
+    .site-content { padding-bottom: 0; }
+
+    /*
+    Map
+     */
+
+    /* map */
+    .map-area, .map-content { width: 100%; height: 425px; }
+    .map-content { overflow: hidden; position: relative; }
+    .map-initialize { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background-repeat: no-repeat; background-position: center; -moz-background-size: cover; background-size: cover; }
+    .map-responsive { position: relative; width: 100%; height: 100%; }
+    .map-responsive > .map { width: 100%; height: 100%; }
+    @media (max-width:767px) {
+        .map-responsive { position: relative; padding-top: 56.25%; }
+        .map-responsive > .map { position: absolute !important; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; }
+    }
+    </style>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+<!--[if lt IE 9]>
+<noscript>
+    <div class="message-alert message-noscript-warning" role="alert" style="padding:10px;">
+        <strong>This web page requires JavaScript to be enabled.</strong><br/>
+        JavaScript is an object-oriented computer programming language
+        commonly used to create interactive effects within web browsers.
+    </div>
+</noscript>
+<div class="message-alert message-browser-upgrade" role="alert" style="padding:10px;">
+    You are using an <strong>outdated</strong> browser. Please <a class="alert-link" href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.
+</div>
+<![endif]-->
+<div id="page" class="site">
+
+    <header id="masthead" class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="container">
+            <h1 class="site-title display-1" itemprop="name">jQuery Map</h1>
+            <p class="site-description display-7">&mdash; Demo Page &mdash;</p>
+        </div><!-- .container -->        
+    </header>
+
+    <div id="content" class="site-content">
+        <main class="main-content">
+            <section id="primary" class="content-area">
+                <div id="main" class="site-main">
+                    <div class="main-inner">
+                        <div class="container-fluid">
+
+                            <h2 class="screen-reader-text">Example</h2>
+
+                            <section class="map-area" itemscope itemtype="http://schema.org/LocalBusiness">
+                                <header class="map-header screen-reader-text">
+                                    <div class="container">
+                                        <h2 class="map-title">Map Content</h2>
+                                        <div class="map-meta">
+                                            <span itemprop="name">W3LabKr</span>
+                                            <span itemprop="address">Local Business Address</span>
+                                            <span itemprop="telephone">000-0000-0000</span>
+                                            <img itemprop="image" src="assets/images/map/map-retro.jpg" alt="Local business image">
+                                        </div>
+                                    </div>
+                                </header>
+                                <div class="map-content">
+                                    <div class="map-initialize" style="background-image: url(assets/images/map/map-retro.jpg);"></div>
+                                    <div class="map-responsive">
+                                        <div class="map map-google" data-map-google='{"lat":-34.397,"lng":150.644,"zoom":12,"styleWizard":"retro"}'></div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="map-area" itemscope itemtype="http://schema.org/LocalBusiness">
+                                <header class="map-header screen-reader-text">
+                                    <div class="container">
+                                        <h2 class="map-title">Map Content</h2>
+                                        <div class="map-meta">
+                                            <span itemprop="name">W3LabKr</span>
+                                            <span itemprop="address">Local Business Address</span>
+                                            <span itemprop="telephone">000-0000-0000</span>
+                                            <img itemprop="image" src="assets/images/map/map-retro.jpg" alt="Local business image">
+                                        </div>
+                                    </div>
+                                </header>
+                                <div class="map-content">
+                                    <div class="map-initialize" style="background-image: url(assets/images/map/map-retro.jpg);"></div>
+                                    <div class="map-responsive">
+                                        <div class="map map-naver" data-map-naver='{"zoom":12}'></div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="map-area" itemscope itemtype="http://schema.org/LocalBusiness">
+                                <header class="map-header screen-reader-text">
+                                    <div class="container">
+                                        <h2 class="map-title">Map Content</h2>
+                                        <div class="map-meta">
+                                            <span itemprop="name">W3LabKr</span>
+                                            <span itemprop="address">Local Business Address</span>
+                                            <span itemprop="telephone">000-0000-0000</span>
+                                            <img itemprop="image" src="assets/images/map/map-retro.jpg" alt="Local business image">
+                                        </div>
+                                    </div>
+                                </header>
+                                <div class="map-content">
+                                    <div class="map-initialize" style="background-image: url(assets/images/map/map-retro.jpg);"></div>
+                                    <div class="map-responsive">
+                                        <div class="map map-daum" data-map-daum='{"level":12}'></div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div><!-- .container -->
+                    </div><!-- .main-inner -->
+                </div><!-- #main -->
+            </section><!-- #primary -->
+        </main>
+    </div><!-- #content -->
+
+    <footer id="colophon" class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="container">
+            <p class="copyright">Copyright ⓒ 2019 by W3LabKr</p>
+        </div>
+    </footer>
+
+    <!-- script -->
+    <script src="assets/vendor/jquery/v3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="assets/vendor/jquery/v3.3.1/jquery-migrate.min.js"></script>
+    <script src="assets/js/jquery-map.min.js"></script>
+    <script>
+        $('.map-google').map();
+        $('.map-naver').map({
+            used: 'naver',
+            naver: {
+                api: {
+                    ncpClientId: ''
+                }
+            }
+        });
+        $('.map-daum').map({
+            used: 'daum',
+            daum: {
+                api: {
+                    appkey: ''
+                }
+            }
+        });
+    </script>
+
+</div><!-- #page -->
+</body>
+</html>
